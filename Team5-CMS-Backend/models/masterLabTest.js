@@ -4,7 +4,7 @@ const db = require('../config/database');
 
 
 //MasterLabTestTable
-const MasterLabTest = db.define('masterLabeTest', {
+const MasterLabTest = db.define('masterLabTest', {
     MasterLabTestID: {
         type: Sequelize.INTEGER,
         primaryKey: true,
