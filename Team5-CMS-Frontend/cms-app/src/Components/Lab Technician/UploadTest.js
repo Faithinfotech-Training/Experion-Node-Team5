@@ -18,6 +18,10 @@ function UploadTest() {
 
 
 
+
+
+
+
     const handleSubmit = (event) => {
         // console.log(staffs)
         event.preventDefault()
@@ -35,7 +39,10 @@ function UploadTest() {
                }
 
 
-
+ const handleReset = () => {
+        console.clear()
+        setSubmitted(false)
+    }
 
 
 
@@ -80,7 +87,7 @@ function UploadTest() {
             <Form.Control type="date" placeholder="Date"  name='date' onChange={handleChange}value={input.date}></Form.Control>
             <br></br>
             <Button type='submit' variant="primary" >Submit</Button> <>&nbsp;</>
-            <Button type='reset' variant="secondary">Clear</Button>
+            <Button type='reset' variant="secondary" onClick={handleReset}>Clear</Button>
           </Form.Group>
         </Form>
       </div>
