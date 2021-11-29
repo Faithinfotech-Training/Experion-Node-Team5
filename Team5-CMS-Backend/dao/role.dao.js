@@ -1,4 +1,4 @@
-const Role = require('../models/cms');
+const Role = require('../models/role');
 var roleDao = {
     findAll: findAll,
     create: create,
