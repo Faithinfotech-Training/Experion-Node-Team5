@@ -17,18 +17,18 @@ const patientLogRoutes = require('./patient.route')
 const { route } = require('./staff.route');
 
 router.use('/roles', roleRoutes);
-router.use('/doctor',doctorRoutes)
-router.use('/labreport',labReportRoutes)
-router.use('/mastermedicine',masterMedicineRoutes)
-router.use('/patient',patientRoutes)
-router.use('/prescribedmedicine',prescribedMedicineRoutes)
+router.use('/doctors',doctorRoutes)
+router.use('/labreports',labReportRoutes)
+router.use('/mastermedicines',masterMedicineRoutes)
+router.use('/patients',patientRoutes)
+router.use('/prescribedmedicines',prescribedMedicineRoutes)
 router.use('/specializations',specializationsroutes)
 router.use('/appointments',appointmentRoutes)
-router.use('/authentication',authenticationRoutes)
-router.use('/staff',staffRoutes)
+router.use('/authentications',authenticationRoutes)
+router.use('/staffs',staffRoutes)
 router.use('/prescriptions',prescriptionsRoutes)
 router.use('/masterlabtests',masterLabTestRoutes)
-router.use('/prescribedlabtest',prescribedLabTestRoutes)
-router.use('/patientlog',patientLogRoutes)
+router.use('/prescribedlabtests',prescribedLabTestRoutes)
+router.use('/patientlogs',patientLogRoutes)
 
 module.exports = router;

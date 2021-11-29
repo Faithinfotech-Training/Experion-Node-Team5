@@ -31,7 +31,7 @@ const Staff = db.define('staff',{
     },
     DateOfResignation : {
         type : Sequelize.DATE,
-        allowNull: false
+        allowNull: true
     },
     Remarks : {
         type  : Sequelize.TEXT,
