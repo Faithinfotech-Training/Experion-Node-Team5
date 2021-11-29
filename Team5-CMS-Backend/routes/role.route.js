@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const roleController = require('../controller/cms.controller');
+const roleController = require('../controller/role.controller');
 
 router.post('/', roleController.addRole);
 router.get('/', roleController.findRoles);

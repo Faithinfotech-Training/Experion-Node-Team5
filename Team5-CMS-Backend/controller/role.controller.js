@@ -1,5 +1,5 @@
-const bookDao = require('../dao/cms.dao');
-var bookController = {
+const roleDao = require('../dao/role.dao');
+var roleController = {
     addRole: addRole,
     findRoles: findRoles,
     findRoleById: findRoleById,
@@ -8,8 +8,8 @@ var bookController = {
 }
 
 function addRole(req, res) {
-    let book = req.body;
-    bookDao.create(book).
+    let role = req.body;
+    roleDao.create(role).
         then((data) => {
             res.send(data);
         })
@@ -19,7 +19,7 @@ function addRole(req, res) {
 }
 
 function findRoleById(req, res) {
-    bookDao.findById(req.params.RoleID).
+    roleDao.findById(req.params.RoleID).
         then((data) => {
             res.send(data);
         })
@@ -29,11 +29,11 @@ function findRoleById(req, res) {
 }
 
 function deleteById(req, res) {
-    bookDao.deleteById(req.params.RoleID).
+    roleDao.deleteById(req.params.RoleID).
         then((data) => {
             res.status(200).json({
                 message: "Role deleted successfully",
-                book: data
+                role: data
             })
         })
         .catch((error) => {
@@ -42,11 +42,11 @@ function deleteById(req, res) {
 }
 
 function updateRole(req, res) {
-    bookDao.updateRole(req.body, req.params.RoleID).
+    roleDao.updateRole(req.body, req.params.RoleID).
         then((data) => {
             res.status(200).json({
                 message: "Role updated successfully",
-                book: data
+                role: data
             })
         })
         .catch((error) => {
@@ -55,7 +55,7 @@ function updateRole(req, res) {
 }
 
 function findRoles(req, res) {
-    bookDao.findAll().
+    roleDao.findAll().
         then((data) => {
             res.send(data);
         })
@@ -64,4 +64,4 @@ function findRoles(req, res) {
         });
 }
 
-module.exports = bookController;
+module.exports = roleController;
