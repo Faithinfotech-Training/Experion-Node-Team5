@@ -1,8 +1,9 @@
-import LabTechHome from "./Components/Lab Technician/LabTechHome";
-import UploadTest from "./Components/Lab Technician/UploadTest";
-import DaywiseList from "./Components/Lab Technician/DaywiseList";
 
-import "./App.css";
+
+import './App.css';
+import LabTechHome from './Components/Lab Technician/LabTechHome';
+import UploadTest from './Components/Lab Technician/UploadTest';
+import DaywiseList from './Components/Lab Technician/DaywiseList';
 
 import { Navbar, Container, Nav, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -38,6 +39,7 @@ function MyRouter() {
   };
   return (
     <>
+
       <Router>
         <h1>
           <div
@@ -64,6 +66,7 @@ function MyRouter() {
               <Nav.Link href="/about">About Us</Nav.Link>
               <Nav.Link href="/login">Login</Nav.Link>
               <Nav.Link href="/lab">Laboratory</Nav.Link>
+              <Nav.Link href="/doctor">Doctor</Nav.Link>
             </Nav>
           </Container>
         </Navbar>
@@ -86,6 +89,7 @@ function MyRouter() {
           <Route path="//labresults/:id" element={<LabResults />} />
           <Route path="//medicalhistory/:id" element={<MedicalHistory />} />
           <Route path="//patientdtails/:id" element={<PatientDetails />} />
+
         </Routes>
         <br />
         <br />
