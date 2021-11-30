@@ -19,14 +19,14 @@ function MyForm(props){
     const [staffs,setStaffs] = useState({})
     const [submitted,setSubmitted] = useState(false)
 
-    // useEffect(() => {
-    //     axios
-    //         .get(`http://localhost:4000/staffs/${props.id}`)
-    //         .then(response => {
-    //             console.log(response)
-    //             setStaffs(response.data)
-    //         })
-    // },[])
+     useEffect(() => {
+         axios
+             .get(`http://localhost:4000/staffs/${props.id}`)
+             .then(response => {
+                 console.log(response)
+                 setStaffs(response.data)
+            })
+    },[])
 
     function handleChange(event){
         const name = event.target.name

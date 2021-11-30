@@ -1,17 +1,22 @@
 import './App.css';
 
-import { Navbar, Container, Nav ,Button} from 'react-bootstrap'
+import { Navbar, Container, Nav } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
+import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
+
+
 import Home from './Components/Home';
 import About from './Components/About';
 import Login from './Components/Login';
 import NoMatch from './Components/NoMatch';
 import AdminHomePage from './Components/Admin/AdminHome';
 import AddStaff from './Components/Admin/StaffList/AddStaff';
-//import Staff from './Components/Admin/StaffList/Staffs';
 import StaffDetails from './Components/Admin/StaffList/StaffDetails';
 import StaffFetch from './Components/Admin/StaffList/StaffFetch';
+
+
+
 
 
 function App() {
@@ -35,8 +40,24 @@ function MyRouter() {
   return (
     <>
     <Router>
+    <div style={{marginTop:0,marginRight:0}}>
+        <Navbar className='color-nav' variant='dark'>
+          <Container style={{marginRight:0}}>
+          
+            <Nav className='ms-auto' >
+            <Navbar.Brand  href='/' style={{marginLeft:0}}>Health360</Navbar.Brand>
+              <Nav.Link href='/'>Home</Nav.Link>
+              <Nav.Link href='/about'>About Us</Nav.Link>
+              <Nav.Link href='/login'>Login</Nav.Link>
+              <Nav.Link href="tel:91 481 294 1300" style={{color:"red"}}>Emergency  +91 481 294 1300</Nav.Link>
+              <Nav.Link href="https://api.whatsapp.com/send?phone=91 90 7272 6270" style={{color:"green"}}>Whatsapp +91 90 7272 6270</Nav.Link>
+            </Nav>
+        </Container>
+      </Navbar>        
       
-      <h1>
+      </div>
+      
+      {/* <h1>
       <div style={{
             marginTop: 40, 
             padding : 10,
@@ -44,13 +65,12 @@ function MyRouter() {
             color : 'rgb(218, 153, 79)'
           }}> Health360
           </div></h1>
-      <h6 style={{marginTop:30},{color:'rgb(218, 153, 79)'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </h6>
+      <h6 style={{marginTop:30},{color:'rgb(218, 153, 79)'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </h6> */}
 
      
-      <Navbar className='color-nav' variant='dark' style={{marginTop:60}}>
+      <Navbar className='color-nav' variant='dark' style={{marginTop:10,width:250}}>
         <Container style={{marginLeft:0}}>
-        <Navbar.Brand  href='/' >Health360</Navbar.Brand>
-          <Nav className='me-auto'>
+          <Nav className='flex-column'>
             <Nav.Link href='/'>Home</Nav.Link>
             <Nav.Link href='/about'>About Us</Nav.Link>
             <Nav.Link href='/login'>Login</Nav.Link>
@@ -74,12 +94,22 @@ function MyRouter() {
       
 
       <br /><br /><br />
-      <br /><br /> <br />
-      <footer >
-        <p style={layLow}>Copyright - All Rights Reserved</p>
-      </footer>
+      
+
+    <MDBFooter color="blue" className="font-small pt-4 mt-4">
+      <div className="footer-copyright text-center py-3">
+        <MDBContainer fluid>
+          &copy; {new Date().getFullYear()} Copyright: <a href="https://copyright.gov.in/Documents/CopyrightRules1957.pdf"> Health360ltd.com </a>
+        </MDBContainer>
+      </div>
+    </MDBFooter>
+
     </Router>
-</>
+
+
+    </>
+    
+    
   )
 }
 

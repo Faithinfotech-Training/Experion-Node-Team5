@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react'
 import axios from 'axios'
-import Staff from '../Staffs.js'
+import Staff from './Staffs.js'
 
 function StaffFetch(){
     const [staffs,setStaffs] = useState([])
