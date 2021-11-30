@@ -21,7 +21,7 @@ function LabTechHome() {
       </Link>
       <Link to='/testdetails'>
         <button type='button' className='labtech'>
-          <h2>Add Test Details</h2>
+          <h2>Test Details</h2>
         </button>
       </Link>
       
