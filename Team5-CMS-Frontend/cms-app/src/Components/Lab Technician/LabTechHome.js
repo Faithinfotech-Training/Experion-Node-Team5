@@ -19,6 +19,12 @@ function LabTechHome() {
           <h2>View Patient Report</h2>
         </button>
       </Link>
+      <Link to='/testdetails'>
+        <button type='button' className='labtech'>
+          <h2>Add Test Details</h2>
+        </button>
+      </Link>
+      
     </>
   );
 }
