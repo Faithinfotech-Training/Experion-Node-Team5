@@ -7,6 +7,11 @@ import Home from './Components/Home';
 import About from './Components/About';
 import Login from './Components/Login';
 import NoMatch from './Components/NoMatch';
+import AdminHomePage from './Components/Admin/AdminHome';
+import AddStaff from './Components/Admin/StaffList/AddStaff';
+//import Staff from './Components/Admin/StaffList/Staffs';
+import StaffDetails from './Components/Admin/StaffList/StaffDetails';
+import StaffFetch from './Components/Admin/StaffList/StaffFetch';
 
 
 function App() {
@@ -58,6 +63,13 @@ function MyRouter() {
         <Route path='/about' element={<About/>} />
         <Route path='/login' element={<Login/>} />
         <Route path='*' element={<NoMatch/>} />
+        <Route path='/admin' element={<AdminHomePage/>}/>
+        <Route path='/addstaff' element={<AddStaff/>} />
+        <Route path='/staffs' element={<StaffFetch/>} />
+        <Route path='/staffs/:id' element={<StaffDetails/>} />
+        
+
+        {/* <Route path='*' element={<NoMatch/>} /> */}
       </Routes>
       
 
