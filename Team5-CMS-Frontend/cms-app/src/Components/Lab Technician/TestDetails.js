@@ -9,12 +9,14 @@ function TestDetails(props){
         <h4>{props.details.MasterLabTestName}</h4>
         <h4></h4>
         <div>
-            {props.details}
+            
         </div>
         
         <div >
-        <Link to={`/staffdetails/${props.details.id}`}><button type='button' id='details'>View Details</button></Link><>&nbsp;</>
+        <Link to={`/viewtestdetails/${props.details.MasterLabTestID}`}><button type='button' id='details'>View Details</button></Link><>&nbsp;</>
          </div>
+
+         
     </div>
     </>)
 }

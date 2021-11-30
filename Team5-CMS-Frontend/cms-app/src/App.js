@@ -20,7 +20,9 @@ import LabResults from "./Components/Doctor/LabResults";
 import MedicalHistory from "./Components/Doctor/MedicalHistory";
 import PatientDetails from "./Components/Doctor/PatientDetails";
 import TestList from './Components/Lab Technician/TestList';
-
+import ViewTestDetails from './Components/Lab Technician/ViewTestDetails';
+import AddTest from './Components/Lab Technician/AddTest';
+import EditTest from './Components/Lab Technician/EditTest';
 function App() {
   return (
     <div className="App">
@@ -90,8 +92,10 @@ function MyRouter() {
           <Route path="//labresults/:id" element={<LabResults />} />
           <Route path="//medicalhistory/:id" element={<MedicalHistory />} />
           <Route path="//patientdtails/:id" element={<PatientDetails />} />
-          <Route path="testdetails" element={<TestList/>}/>
-
+          <Route path="/testdetails" element={<TestList/>}/>
+          <Route path='/viewtestdetails/:id' element={<ViewTestDetails/>}/>
+            <Route path='/addtest' element={<AddTest/>}/>
+            <Route path='/testedit/:id' element={<EditTest/>}/>
         </Routes>
         <br />
         <br />
