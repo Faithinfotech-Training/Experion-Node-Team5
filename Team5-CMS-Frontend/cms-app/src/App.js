@@ -19,6 +19,7 @@ import AddNotes from "./Components/Doctor/AddNotes";
 import LabResults from "./Components/Doctor/LabResults";
 import MedicalHistory from "./Components/Doctor/MedicalHistory";
 import PatientDetails from "./Components/Doctor/PatientDetails";
+import TestList from './Components/Lab Technician/TestList';
 
 function App() {
   return (
@@ -89,6 +90,7 @@ function MyRouter() {
           <Route path="//labresults/:id" element={<LabResults />} />
           <Route path="//medicalhistory/:id" element={<MedicalHistory />} />
           <Route path="//patientdtails/:id" element={<PatientDetails />} />
+          <Route path="testdetails" element={<TestList/>}/>
 
         </Routes>
         <br />
