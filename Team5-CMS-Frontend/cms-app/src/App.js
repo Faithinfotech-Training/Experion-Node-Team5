@@ -1,4 +1,8 @@
 
+import AdminHomePage from './Components/Admin/AdminHome';
+import AddStaff from './Components/Admin/StaffList/AddStaff';
+import StaffDetails from './Components/Admin/StaffList/StaffDetails';
+import StaffFetch from './Components/Admin/StaffList/StaffFetch';
 
 import './App.css';
 import LabTechHome from './Components/Lab Technician/LabTechHome';
@@ -67,7 +71,9 @@ function MyRouter() {
               <Nav.Link href="/login">Login</Nav.Link>
               <Nav.Link href="/lab">Laboratory</Nav.Link>
               <Nav.Link href="/doctor">Doctor</Nav.Link>
+              <Nav.Link href="/admin">Admin</Nav.Link>
             </Nav>
+
           </Container>
         </Navbar>
         <Routes>
@@ -78,7 +84,12 @@ function MyRouter() {
           <Route path="/uploadtest" element={<UploadTest />} />
           <Route path="/daywiselist" element={<DaywiseList />} />
           <Route path="*" element={<NoMatch />} />
-
+            
+         <Route path='/admin' element={<AdminHomePage/>}/>
+        <Route path='/addstaff' element={<AddStaff/>} />
+        <Route path='/staffs' element={<StaffFetch/>} />
+        <Route path='/staffs/:id' element={<StaffDetails/>} />
+        
           <Route path="/doctor" element={<DrDash />} />
           <Route path="/appointment/:id" element={<Appointments />} />
           <Route
