@@ -1,4 +1,4 @@
-//import axios from 'axios'
+import axios from 'axios'
 import React,{useState} from 'react'
 
 import {Form,Button} from 'react-bootstrap'
@@ -20,17 +20,16 @@ function AddPatient() {
         event.preventDefault()
         setSubmitted(true)
 
-            // axios   
-            //     .post('http://localhost:4000/staffs/',staffs)
-            //     .then(response => {
-            //         console.log(response)
-            //         alert(`${staffs.StaffName} added successfully`)
-            //     })
-            //     .catch(error => {
-            //         console.log(error)
-            //     })
+            axios   
+                 .post('http://localhost:4000/patients/',patients)
+                 .then(response => {
+                     console.log(response)
+                     alert(`${patients.PatientName} added successfully`)
+                 })
+                 .catch(error => {
+                     console.log(error)
+                 })
     }
-
     const handleReset = () => {
         console.clear()
         setSubmitted(false)
@@ -48,7 +47,43 @@ function AddPatient() {
                   }} > 
                 <Form onSubmit={handleSubmit}>
                     {submitted?<div>Success!Patient Added</div>:null}
-                    <Form.Group className='mb-3' controlId='formStaffName'>
+                    <Form.Group className='mb-3' controlId='formPatientID'>
+                        <Form.Control
+                        className='Form-Control'
+                        id= 'PatientID'
+                        type= 'text'
+                        placeholder='Enter Patient Id'
+                        name = 'PatientID'
+                        value = {patients.PatientID}
+                        onChange = {handleChange}
+                        required
+                    />
+                    </Form.Group>
+                    <Form.Group className='mb-3' controlId='formDoctorId'>
+                        <Form.Control
+                        className='Form-Control'
+                        id= 'DoctorID'
+                        type= 'text'
+                        placeholder='Enter Patient DoctorId'
+                        name = 'DoctorID'
+                        value = {patients.DoctorID}
+                        onChange = {handleChange}
+                        required
+                    />
+                    </Form.Group>
+                    <Form.Group className='mb-3' controlId='formAppoinmentId'>
+                        <Form.Control
+                        className='Form-Control'
+                        id= 'AppointmentID'
+                        type= 'text'
+                        placeholder='Enter Patient AppoinmentId'
+                        name = 'AppointmentID'
+                        value = {patients.AppointmentID}
+                        onChange = {handleChange}
+                        required
+                    />
+                    </Form.Group>
+                    <Form.Group className='mb-3' controlId='formPatientName'>
                         <Form.Control
                         className='Form-Control'
                         id= 'PatientName'
@@ -74,7 +109,19 @@ function AddPatient() {
                     />
                     </Form.Group>
 
-                    <Form.Group className='mb-3' controlId='formStaffName'>
+                    <Form.Group className='mb-3' controlId='formAge'>
+                        <Form.Control
+                        className='Form-Control'
+                        id='Age'
+                        type='text'
+                        placeholder='Enter Your Age'
+                        name = 'Age'
+                        value = {patients.Age}
+                        onChange = {handleChange}
+                        required
+                    />
+                    </Form.Group>
+                    <Form.Group className='mb-3' controlId='formContactNumber'>
                         <Form.Control
                         className='Form-Control'
                         id='ContactNo'
@@ -87,11 +134,11 @@ function AddPatient() {
                     />
                     </Form.Group>
 
-                    <Form.Group className='mb-3' controlId='formStaffName'>
+                    <Form.Group className='mb-3' controlId='formPatientEmail'>
                         <Form.Control
                         className='Form-Control'
                         id='Email'
-                        type='number'
+                        type='text'
                         placeholder='Enter Email'
                         name = 'Email'
                         value = {patients.Email}
@@ -100,7 +147,7 @@ function AddPatient() {
                     />
                     </Form.Group>
 
-                    <Form.Group className='mb-3' controlId='formStaffName'>
+                    <Form.Group className='mb-3' controlId='formPatientAddress'>
                         <Form.Control
                         className='Form-Control'
                         id='Address'
@@ -115,15 +162,16 @@ function AddPatient() {
                     <Form.Group className='mb-3' controlId='formStaffName'>
                         <Form.Control
                         className='Form-Control'
-                        id='Blood'
+                        id='BloodGroup'
                         type='text'
                         placeholder='Blood group'
-                        name = 'Blood'
-                        value = {patients.Blood}
+                        name = 'BloodGroup'
+                        value = {patients.BloodGroup}
                         onChange = {handleChange}
                         required
                     />
                     </Form.Group>
+                    
                   
 
                 <Button type='submit' variant='primary' style={{backgroundColor:'white',border:'none',color:'rgb(85, 205, 255)'}}>Register</Button>

@@ -1,8 +1,5 @@
 const Sequelize = require("sequelize");
 const db = require("../config/database");
-
-
-
 const Patients = db.define("patients", {
   PatientID: {
     type: Sequelize.INTEGER,
@@ -44,10 +41,6 @@ const Patients = db.define("patients", {
   BloodGroup : {
       type : Sequelize.STRING,
       allowNull : false
-  },
-  IsPersonAlive : {
-    type :  Sequelize.INTEGER,
-    allowNull : false
   }
 });
 
