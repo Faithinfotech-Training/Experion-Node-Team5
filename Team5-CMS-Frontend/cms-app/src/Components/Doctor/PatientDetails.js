@@ -9,7 +9,7 @@ function PatientDetails(props) {
   const { id } = useParams(); //passed paras stores here
 
   useEffect(() => {
-    axios.get(`http://localhost:4000/patients/${id}`).then((response) => {
+    axios.get(`http://localhost:5000/staff/${id}`).then((response) => {
       console.log("Promise fullfilled");
       console.log(response);
       setAppointment(response.data);
@@ -20,11 +20,11 @@ function PatientDetails(props) {
     <>
       <div>
         <h2>Patient Details</h2>
-        <h3>Appointment ID: {appointment.PatientID}</h3>
-        <h3>Patient Name: {appointment.PatientName}</h3>
-        <h3>Age: {appointment.Age}</h3>
-        <h3>Blood Group: {appointment.BloodGroup}</h3>
-        <h3>Contact Number: {appointment.ContactNo}</h3>
+        <h3>Appointment ID: {appointment.id}</h3>
+        <h3>Patient Name: {appointment.name}</h3>
+        <h3>Age: {appointment.age}</h3>
+        <h3>Blood Group: {appointment.bloodgroup}</h3>
+        <h3>Contact Number: {appointment.contactnumber}</h3>
 
       </div>
     </>

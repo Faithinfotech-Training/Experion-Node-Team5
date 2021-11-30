@@ -9,7 +9,7 @@ function Appointments(props) {
       <div>
         <h4> {props.details.name}</h4>
         <div className="linkstyle">
-          <Link to={`/appointmentdetails/${props.details.AppointmentID}`}>View Details</Link>
+          <Link to={`/appointmentdetails/${props.details.id}`}>View Details</Link>
         </div>
       </div>
     </>

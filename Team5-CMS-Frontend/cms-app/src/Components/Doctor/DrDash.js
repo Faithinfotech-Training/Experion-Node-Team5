@@ -1,4 +1,5 @@
-
+import { Button, Form } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState } from "react";
 import './App.css'
 import { useNavigate } from "react-router-dom";
@@ -12,19 +13,13 @@ function DrDash() {
         <button
           type="button"
           variant="primary"
-          onClick={() => navigate(`/appointmentdetails`)}
+          onClick={() => navigate(`/appointment/${doctor.id}`)}
         >
           Appointments
         </button>
         <br />
         <br />
-        <button
-          type="button"
-          variant="primary"
-          onClick={() => navigate(`/patients`)}
-        >
-          Patient Record
-        </button>
+        
       </div>
     </div>
   );
