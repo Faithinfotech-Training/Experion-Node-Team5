@@ -8,7 +8,7 @@ function StaffList() {
 
   useEffect(() => {
     axios.get(
-      "http://localhost:5000/staff").then(response => {
+      "http://localhost:4000/appointments").then(response => {
         console.log("Promise fullfilled");
         console.log(response);
         setAppointments(response.data);

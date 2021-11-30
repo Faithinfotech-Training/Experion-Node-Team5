@@ -90,12 +90,9 @@ function MyRouter() {
         <Route path='/staffs' element={<StaffFetch/>} />
         <Route path='/staffs/:id' element={<StaffDetails/>} />
         
-          <Route path="/doctor" element={<DrDash />} />
+          <Route path="/doctor" element={<AppointmentDetails />} />
           <Route path="/appointment/:id" element={<Appointments />} />
-          <Route
-            path="/appointmentdetails/:id"
-            element={<AppointmentDetails />}
-          />
+          <Route path="/appointmentdetails" element={<AppointmentDetails />} />
           <Route path="/addnotes/:id" element={<AddNotes />} />
           <Route path="//labresults/:id" element={<LabResults />} />
           <Route path="//medicalhistory/:id" element={<MedicalHistory />} />
