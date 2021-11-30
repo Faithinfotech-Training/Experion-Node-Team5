@@ -6,44 +6,52 @@ import { useNavigate } from "react-router-dom";
 function AppointmentDetails() {
   //initializwe ths usestate to empty
   const [appointment, setAppointment] = useState([]);
+  const [patient, setPatient] = useState([]);
   const navigate = useNavigate();
   const { id } = useParams(); //passed paras stores here
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/staff/${id}`).then((response) => {
+    axios.get(`http://localhost:4000/appointments/${id}`).then((response) => {
       console.log("Promise fullfilled");
       console.log(response);
       setAppointment(response.data);
     });
   }, []);
 
+  useEffect(() => {
+    axios.get(`http://localhost:4000/patients/${id}`).then((response) => {
+      console.log("Promise fullfilled");
+      console.log(response);
+      setPatient(response.data);
+    });
+  }, []);
+
   return (
     <>
       <div>
-        <h2>Staff List</h2>
-        <h3>Appointment ID: {appointment.id}</h3>
-        <h3>Patient Name: {appointment.name}</h3>
+        <h3>Appointment ID: {appointment.AppointmentID}</h3>
+        <h3>Patient Name: {patient.PatientName}</h3>
         <button
           type="button"
-          onClick={() => navigate(`/addnotes/${appointment.id}`)}
+          onClick={() => navigate(`/addnotes/${appointment.PatientID}`)}
         >
         Add to History
         </button>
         <button
           type="button"
-          onClick={() => navigate(`/labresults/${appointment.id}`)}
+          onClick={() => navigate(`/labresults/${appointment.PatientID}`)}
         >
          View Lab Results
         </button>
         <button
           type="button"
-          onClick={() => navigate(`/medicalhistory/${appointment.id}`)}
+          onClick={() => navigate(`/medicalhistory/${appointment.PatientID}`)}
         >
         View Medical History
         </button>
         <button
           type="button"
-          onClick={() => navigate(`/patientdtails/${appointment.id}`)}
+          onClick={() => navigate(`/patientdtails/${appointment.PatientID}`)}
         >
          View Patient Details
         </button>

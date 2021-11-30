@@ -8,6 +8,18 @@ import Login from './Components/FrontOffice/AddPatient';
 import NoMatch from './Components/NoMatch';
 import AddPatient from './Components/FrontOffice/AddPatient';
 import DoctorAssgn from './Components/Doctor/DoctorAssgn';
+import LabTechHome from './Components/Lab Technician/LabTechHome';
+import UploadTest from './Components/Lab Technician/UploadTest';
+import DaywiseList from './Components/Lab Technician/DaywiseList';
+import DrDash from "./Components/Doctor/DrDash";
+import Appointments from "./Components/Doctor/Appointments";
+import AppointmentDetails from "./Components/Doctor/AppointmentDetails";
+import AddNotes from "./Components/Doctor/AddNotes";
+import LabResults from "./Components/Doctor/LabResults";
+import MedicalHistory from "./Components/Doctor/MedicalHistory";
+import PatientDetails from "./Components/Doctor/PatientDetails";
+import TestList from './Components/Lab Technician/TestList';
+
 
 function App() {
   return (
@@ -60,6 +72,25 @@ function MyRouter() {
         <Route path='*' element={<NoMatch/>} />
         <Route path="/addpatient" element={<AddPatient />} />
         <Route path="/doctorassign" element={<DoctorAssgn />} />
+          <Route path="/lab" element={<LabTechHome />} />
+          <Route path="/uploadtest" element={<UploadTest />} />
+          <Route path="/daywiselist" element={<DaywiseList />} />
+   
+            
+         <Route path='/admin' element={<AdminHomePage/>}/>
+        <Route path='/addstaff' element={<AddStaff/>} />
+        <Route path='/staffs' element={<StaffFetch/>} />
+        <Route path='/staffs/:id' element={<StaffDetails/>} />
+        
+          <Route path="/doctor" element={<AppointmentDetails />} />
+          <Route path="/appointment/:id" element={<Appointments />} />
+          <Route path="/appointmentdetails" element={<AppointmentDetails />} />
+          <Route path="/addnotes/:id" element={<AddNotes />} />
+          <Route path="/labresults/:id" element={<LabResults />} />
+          <Route path="/medicalhistory/:id" element={<MedicalHistory />} />
+          <Route path="/patientdtails/:id" element={<PatientDetails />} />
+          <Route path="/testdetails" element={<TestList/>}/>
+          
       </Routes>
       
 

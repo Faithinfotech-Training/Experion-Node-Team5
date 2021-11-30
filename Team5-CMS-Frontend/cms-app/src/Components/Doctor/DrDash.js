@@ -12,7 +12,7 @@ function DrDash() {
         <button
           type="button"
           variant="primary"
-          onClick={() => navigate(`/appointment/${doctor.id}`)}
+          onClick={() => navigate(`/appointmentdetails`)}
         >
           Appointments
         </button>
@@ -21,7 +21,7 @@ function DrDash() {
         <button
           type="button"
           variant="primary"
-          onClick={() => navigate(`/patients/${patient.id}`)}
+          onClick={() => navigate(`/patients`)}
         >
           Patient Record
         </button>
